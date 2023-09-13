@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.example.sdk"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.sdk"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -68,7 +68,7 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    implementation ("com.github.solomonsampan:ComposeSDK:1.0.0")
-   // implementation(project(":Compo"))
+    implementation ("com.github.solomonsampan:ComposeSDK:1.0.1")
+    implementation(project(":Compo"))
 }
 

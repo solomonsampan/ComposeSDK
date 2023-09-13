@@ -11,6 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.compo.CustomText12
+import com.example.compo.CustomText14
 import com.example.compo.ShowToast
 import com.example.sdk.ui.theme.SDKTheme
 
@@ -25,7 +27,10 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     val context = LocalContext.current
-                    ShowToast()
+                    ShowToast(context, "Hello World!", 1000)
+
+                    CustomText12(text = "Hello")
+                    CustomText14(text = "Hello")
                 }
             }
         }
