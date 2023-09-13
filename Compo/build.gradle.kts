@@ -45,7 +45,7 @@ publishing {
         create<MavenPublication>("components") {
             groupId = "com.github.solomonsampan"
             artifactId = "ComponentsLibrary"
-            version = "1.0"
+            version = "523340803f"
 
             afterEvaluate {
                 artifact(tasks.getByName("bundleReleaseAar"))
@@ -66,6 +66,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     implementation("androidx.activity:activity-compose:1.7.2")
+    implementation("com.github.solomonsampan:SDK:523340803f")
 }
 
 
