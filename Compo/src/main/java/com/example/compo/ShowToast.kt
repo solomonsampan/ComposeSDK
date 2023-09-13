@@ -33,13 +33,6 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun ShowToast(context: Context, msg: String, duration: Int){
-
-    Log.i("MyTag", "Show Toast method")
-    Toast.makeText(context, msg, duration).show()
-}
-
-@Composable
 fun CustomTextField(
     modifier: Modifier,
     keyboardOptions: KeyboardOptions = remember { KeyboardOptions.Default },
