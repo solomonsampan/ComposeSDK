@@ -6,3 +6,4 @@ plugins {
 }
 val composesdkVersion by extra("1.0.31")
 val composesdkVersion1 by extra("1.0.31")
+val composesdkVersion2 by extra("1.0.33")
