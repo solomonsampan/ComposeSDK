@@ -42,7 +42,7 @@ fun Greeting() {
 
     Column {
         //CustomText14(text = "Hello")
-        Text(text = "Hello")
+        CustomText14(text = "Hello")
     }
 
         }
