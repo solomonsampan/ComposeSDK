@@ -4,6 +4,3 @@ plugins {
     id("org.jetbrains.kotlin.android") version "1.8.10" apply false
     id("com.android.library") version "8.1.1" apply false
 }
-val composesdkVersion by extra("1.0.31")
-val composesdkVersion1 by extra("1.0.31")
-val composesdkVersion2 by extra("1.0.33")
