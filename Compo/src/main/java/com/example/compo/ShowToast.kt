@@ -7,8 +7,10 @@ import android.util.Log
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.text.BasicText
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.LocalContentColor
 import androidx.compose.material.LocalTextStyle
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
@@ -21,6 +23,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.takeOrElse
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextLayoutResult
@@ -79,14 +82,14 @@ fun showToast(context: Context, msg: String, duration: Int){
 }
 
 @Composable
-fun CustomText12(
+fun CustomText14(
     text: String,
     modifier: Modifier = Modifier,
     color: Color = Color.Unspecified,
-    fontSize: TextUnit = 12.sp,
-    fontStyle: FontStyle? = null,
+    fontSize: TextUnit = 14.sp,
+    fontStyle: androidx.compose.ui.text.font.FontStyle? = null,
     fontWeight: FontWeight? = null,
-    fontFamily: FontFamily? = null,
+    fontFamily: androidx.compose.ui.text.font.FontFamily? = null,
     letterSpacing: TextUnit = TextUnit.Unspecified,
     textDecoration: TextDecoration? = null,
     textAlign: TextAlign? = null,
@@ -96,7 +99,38 @@ fun CustomText12(
     maxLines: Int = Int.MAX_VALUE,
     onTextLayout: (TextLayoutResult) -> Unit = {},
     style: TextStyle = LocalTextStyle.current
-){}
+) {
+
+    val textColor = color.takeOrElse {
+        style.color.takeOrElse {
+            LocalContentColor.current
+        }
+    }
+    // NOTE(text-perf-review): It might be worthwhile writing a bespoke merge implementation that
+    // will avoid reallocating if all of the options here are the defaults
+    val mergedStyle = style.merge(
+        TextStyle(
+            color = textColor,
+            fontSize = fontSize,
+            fontWeight = fontWeight,
+            textAlign = textAlign,
+            lineHeight = lineHeight,
+            fontFamily = fontFamily,
+            textDecoration = textDecoration,
+            fontStyle = fontStyle,
+            letterSpacing = letterSpacing
+        )
+    )
+    BasicText(
+        text,
+        modifier,
+        mergedStyle,
+        onTextLayout,
+        overflow,
+        softWrap,
+        maxLines,
+    )
+}
 
 @Composable
 fun CustomText14(
