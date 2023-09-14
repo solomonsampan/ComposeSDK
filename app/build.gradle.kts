@@ -68,7 +68,7 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-   // implementation ("com.github.solomonsampan:ComposeSDK:1.0.2")
-    implementation(project(":Compo"))
+   implementation ("com.github.solomonsampan:ComposeSDK:1.0.3")
+    //implementation(project(":Compo"))
 }
 
