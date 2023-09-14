@@ -72,6 +72,13 @@ fun CustomTextField(
 }
 
 @Composable
+fun showToast(context: Context, msg: String, duration: Int){
+
+    Toast.makeText(context, msg, duration).show()
+
+}
+
+@Composable
 fun CustomText12(
     text: String,
     modifier: Modifier = Modifier,

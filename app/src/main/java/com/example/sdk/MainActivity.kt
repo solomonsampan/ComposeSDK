@@ -12,15 +12,13 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.compo.CustomText12
-import com.example.compo.CustomText14
+
 import com.example.compo.CustomTextField
 import com.example.sdk.ui.theme.SDKTheme
 
@@ -46,14 +44,11 @@ fun Greeting() {
 
    // val context = LocalContext.current
    // ShowToast(context, "Hello World!", 1000)
-    Surface(modifier = Modifier.fillMaxSize()) {
-        Column(verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally) {
 
           //  CustomText12(text = "Hello")
            // CustomText14(text = "Hello")
 
-            CustomTextField(
+            /*CustomTextField(
                 modifier = Modifier
                     .padding(all = 10.dp)
                     .fillMaxWidth(),
@@ -67,14 +62,11 @@ fun Greeting() {
                 ),
                 maxLength = 10,
                 maxLines = 1
-            ){}
+            ){}*/
+
+    //showToast()
         }
 
-    }
-
-
-
-}
 
 @Preview(showBackground = true)
 @Composable
