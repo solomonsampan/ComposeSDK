@@ -50,15 +50,15 @@ fun Greeting() {
         Column(verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally) {
 
-            CustomText12(text = "Hello")
-            CustomText14(text = "Hello")
+          //  CustomText12(text = "Hello")
+           // CustomText14(text = "Hello")
 
             CustomTextField(
                 modifier = Modifier
                     .padding(all = 10.dp)
                     .fillMaxWidth(),
                 labelResId = R.string.app_name,
-                inputWrapper = "empPhoneNumber",
+                inputWrapper = "Custom Text feild",
                 keyboardOptions = KeyboardOptions(
                     capitalization = KeyboardCapitalization.None,
                     autoCorrect = false,
