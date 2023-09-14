@@ -82,6 +82,12 @@ fun showToast(context: Context, msg: String, duration: Int){
 }
 
 @Composable
+fun customtext(msg: String, fontSize: TextUnit){
+
+    Text(text = msg, fontSize = fontSize)
+}
+
+@Composable
 fun CustomText14(
     text: String,
     modifier: Modifier = Modifier,
@@ -121,7 +127,7 @@ fun CustomText14(
             letterSpacing = letterSpacing
         )
     )
-    BasicText(
+   /* Text(
         text,
         modifier,
         mergedStyle,
@@ -129,5 +135,5 @@ fun CustomText14(
         overflow,
         softWrap,
         maxLines,
-    )
+    )*/
 }
