@@ -82,9 +82,10 @@ fun showToast(context: Context, msg: String, duration: Int){
 }
 
 @Composable
-fun customtext(msg: String, fontSize: TextUnit){
+fun customtext(msg: String, fontSize: TextUnit, fontFamily: androidx.compose.ui.text.font.FontFamily?){
 
-    Text(text = msg, fontSize = fontSize)
+    Text(text = msg, fontSize = fontSize, fontFamily = fontFamily)
+
 }
 
 @Composable
