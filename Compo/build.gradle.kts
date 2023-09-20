@@ -45,7 +45,7 @@ publishing {
         create<MavenPublication>("components") {
             groupId = "com.github.solomonsampan"
             artifactId = "ComposeSDK"
-            version = "1.2.2"
+            version = "1.2.3"
 
             afterEvaluate {
                 artifact(tasks.getByName("bundleReleaseAar"))
