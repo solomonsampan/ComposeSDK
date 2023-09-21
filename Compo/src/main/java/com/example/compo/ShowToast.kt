@@ -101,17 +101,13 @@ fun customtext(msg: String, fontSize: TextUnit, fontFamily: androidx.compose.ui.
 }
 
 @Composable
-fun customButton(btnText : String, color1: Color, color2: Color){
+fun customButton(btnText : String){
 
     Button(
         modifier = Modifier
             .wrapContentWidth()
             .background(
-                brush = Brush.horizontalGradient(
-                    colors = listOf(
-                        color1,
-                        color2,
-                    )
+                brush = Brush.horizontalGradient(listOf(Color(0xFF28D8A3), Color(0xFF00BEB2))
                 ), shape = RectangleShape
             )
             .height(ButtonDefaults.MinHeight),
