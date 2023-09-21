@@ -116,7 +116,8 @@ fun customButton(btnText : String, color1: Color, color2: Color, shapes: Shape){
                 ), shape = shapes
             )
             .height(ButtonDefaults.MinHeight),
-        onClick = {}
+        onClick = {},
+        colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent)
     ) {
         Text(text = btnText)
     }
