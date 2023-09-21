@@ -35,6 +35,7 @@ import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.takeOrElse
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
@@ -101,18 +102,21 @@ fun customtext(msg: String, fontSize: TextUnit, fontFamily: androidx.compose.ui.
 }
 
 @Composable
-fun customButton(btnText : String){
+fun customButton(btnText : String, color1: Color, color2: Color, shapes: Shape){
 
     Button(
         modifier = Modifier
-            .wrapContentWidth()
+            .fillMaxWidth()
             .background(
-                brush = Brush.horizontalGradient(listOf(Color(0xFF28D8A3), Color(0xFF00BEB2))
-                ), shape = RectangleShape
+                brush = Brush.horizontalGradient(
+                    colors = listOf(
+                        color1,
+                        color2,
+                    )
+                ), shape = shapes
             )
             .height(ButtonDefaults.MinHeight),
-        onClick = {},
-        colors = ButtonDefaults.buttonColors(contentColor = Color.Transparent)
+        onClick = {}
     ) {
         Text(text = btnText)
     }
