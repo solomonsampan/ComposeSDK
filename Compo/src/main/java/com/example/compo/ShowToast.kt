@@ -7,23 +7,33 @@ import android.util.Log
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicText
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Icon
 import androidx.compose.material.LocalContentColor
 import androidx.compose.material.LocalTextStyle
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Shapes
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.outlined.AccountCircle
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -42,10 +52,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextLayoutResult
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
@@ -124,6 +136,61 @@ fun customButton(btnText : String, color1: Color, color2: Color, shapes: Shape){
 
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun OutlinedTextFieldPassword(fieldName: String) {
+    var text by remember { mutableStateOf("") }
+
+    /*val isVisible by remember {
+        derivedStateOf {
+            text.isNotBlank()
+        }
+    }*/
+    Icons.Outlined.AccountCircle
+    OutlinedTextField(
+        value = text,
+        onValueChange = { text = it },
+        modifier = Modifier.fillMaxWidth().padding(10.dp,0.dp,10.dp,0.dp),
+        label = { Text(fieldName) },
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+        singleLine = true,
+        trailingIcon = {
+            if (text.isNotEmpty()){
+                Icon(imageVector = Icons.Default.Clear, contentDescription = "Username", tint = Color.Blue, modifier = Modifier.clickable {
+                    text = ""
+                })
+            } else{
+                //*Do nothing
+            }
+
+        },
+        leadingIcon = {
+            Icon(imageVector = Icons.Default.Lock, contentDescription = "Username", tint = Color.Blue)
+        },
+        shape = RoundedCornerShape(10.dp)
+    )
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun SimpleTextFieldSample(fieldName: String) {
+    var text by remember { mutableStateOf("") }
+
+    OutlinedTextField(
+        value = text,
+        onValueChange = { text = it },
+        label = { Text(fieldName) },
+        modifier = Modifier.fillMaxWidth().padding(10.dp,0.dp,10.dp,0.dp),
+        leadingIcon = {
+            Icon(imageVector = Icons.Default.Person, contentDescription = "Username", tint = Color.Blue)
+        },
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+        singleLine = true,
+        shape = RoundedCornerShape(10.dp)
+    )
+}
+
+
 @Composable
 fun GradientButton(
     text: String,
@@ -147,6 +214,8 @@ fun GradientButton(
         }
     }
 }
+
+
 
 @Composable
 fun CustomText14(
