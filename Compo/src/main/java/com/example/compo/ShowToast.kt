@@ -59,6 +59,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 @Composable
 fun CustomTextField(
@@ -99,11 +101,52 @@ fun CustomTextField(
     }
 }
 
+
 @Composable
 fun showToast(context: Context, msg: String, duration: Int){
 
     Toast.makeText(context, msg, duration).show()
 
+}
+
+@Composable
+fun DateValues(){
+
+    val dd_mm_yyyy = SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH)
+    val dd_mm_yyyy_hh_mm = SimpleDateFormat("dd.MM.yyyy | hh:mm a", Locale.ENGLISH)
+    val mmmm_dd_yyyy_hh_mm_ss_24 = SimpleDateFormat("MMMM dd,yyyy | kk:mm:ss", Locale.ENGLISH)
+    val mmm_dd_yyyy_hh_mm_24 = SimpleDateFormat("MMM dd, yyyy | kk:mm", Locale.ENGLISH)
+    val dd_mm_yyyy__hh_mm = SimpleDateFormat("dd.MM.yyyy hh:mm a", Locale.ENGLISH)
+    val hh_mm_dd_mm_yyyy = SimpleDateFormat("hh:mm a | dd/MM/yyyy", Locale.ENGLISH)
+    val kk_mm_dd_mm_yyyy = SimpleDateFormat("kk:mm | MM dd yyyy", Locale.ENGLISH)
+    val hh_mm_dd_mmm_yyyy = SimpleDateFormat("hh:mm a   dd MMM yyyy", Locale.ENGLISH)
+    val dd_mmm_yyyy = SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH)
+    val mmmm_dd_yyyy = SimpleDateFormat("MMMM dd, yyyy", Locale.ENGLISH)
+    val mmm_dd_yyyy = SimpleDateFormat("MMM dd, yyyy", Locale.ENGLISH)
+    val mm_dd_yyyy = SimpleDateFormat("MM-dd-yyyy", Locale.ENGLISH)
+    val mmm_dd_yyyy_hh_mm = SimpleDateFormat("MMM dd, yyyy | kk:mm", Locale.ENGLISH)
+    val mmm_dd_yyyy_hh_mm_ss = SimpleDateFormat("MMM dd, yyyy | kk:mm:ss", Locale.ENGLISH)
+    val hh_mm_aa = SimpleDateFormat("hh:mm a", Locale.ENGLISH)
+    val hh_mm_24 = SimpleDateFormat("kk:mm ", Locale.ENGLISH)
+    val mm_ss = SimpleDateFormat("mm:ss", Locale.ENGLISH)
+    val hh_mm_ss = SimpleDateFormat("hh:mm:ss", Locale.ENGLISH)
+    val kk_mm_ss = SimpleDateFormat("kk:mm:ss", Locale.ENGLISH)
+    val kk_mm = SimpleDateFormat("kk:mm", Locale.ENGLISH)
+    val hh_mm_ss_a = SimpleDateFormat("HH:mm:ss ", Locale.ENGLISH)
+    val dd_mm_yyyy_hh_mm_TZ = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH)
+    val dd_mm_yyyy_dots = SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH)
+    val hh_mm_a_dd_mm_yyyy = SimpleDateFormat("hh:mm a | dd.MM.yyyy", Locale.ENGLISH)
+    val dd_mmmm_yyyy = SimpleDateFormat("dd MMMM yyyy", Locale.ENGLISH)
+    val hh_mm_a = SimpleDateFormat("hh:mm a", Locale.ENGLISH)
+    val hh_mm = SimpleDateFormat("hh:mm", Locale.ENGLISH)
+    val HH_mm = SimpleDateFormat("HH:mm", Locale.ENGLISH)
+    val hh = SimpleDateFormat("hh", Locale.ENGLISH)
+    val mm = SimpleDateFormat("mm", Locale.ENGLISH)
+    val dd_mmm = SimpleDateFormat("dd MMM", Locale.ENGLISH)
+    val mmm = SimpleDateFormat("MMM", Locale.ENGLISH)
+    val eee = SimpleDateFormat("EEE", Locale.ENGLISH)
+    val dd__mm__yyyy = SimpleDateFormat("dd / MM / yyyy", Locale.ENGLISH)
+    val ddmmyyyy = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
 }
 
 @Composable
